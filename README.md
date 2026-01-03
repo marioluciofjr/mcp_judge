@@ -66,8 +66,14 @@ Antes de começar, certifique-se de ter instalado:
 Se você não sabe usar o Git, pode simplesmente baixar o projeto clicando no botão verde **Code** no topo da página do GitHub e selecionando **Download ZIP**. Extraia a pasta em um local de sua preferência (Ex: `Área de Trabalho`).
 
 ### 2. Configurar o Claude Desktop
-Abra o arquivo de configuração do Claude Desktop (`claude_desktop_config.json`).
+Abra o arquivo de configuração do Claude Desktop (`claude_desktop_config.json`). Na [docuemntação oficial do MCP](https://modelcontextprotocol.io/docs/develop/connect-local-servers) a orientação do caminho para o arquivo .json é esta:
+
 *   **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+*   **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+> [!IMPORTANT]
+> Depois de instalar o Claude Desktop, verifique se o caminho para o json é este mesmo da documentação. Por via das dúvidas, você pode acessar o arquivo via Claude Deskktop:
+> Menu da barra lateral > Desenvolvedor > Abrir Arquivo de Configuração de Aplicativo
 
 Adicione a configuração abaixo. **Importante**: Substitua o caminho em `args` e `--directory` pelo local onde você salvou a pasta extraída (`mcp_judge`).
 
