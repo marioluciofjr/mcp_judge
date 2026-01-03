@@ -5,16 +5,15 @@ description = "Juiz Computacional para LLMs - MCP Server"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "mcp[cli]>=1.9.3",
+  "mcp[cli]>=1.9.3",
 ]
 authors = [
-    { name = "Mário Lucio", email = "marioluciofjr@gmail.com" }
+  { name = "Mário Lucio", email = "marioluciofjr@gmail.com" }
 ]
 
 [build-system]
-[build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.hatch.build.targets.wheel]
-packages = ["server.py"]
+[tool.setuptools]
+py-modules = ["server"]
