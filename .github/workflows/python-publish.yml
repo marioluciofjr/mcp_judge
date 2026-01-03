@@ -1,16 +1,9 @@
-# This workflow will upload a Python Package to PyPI when a release is created
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 name: Upload Python Package
 
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,18 +11,34 @@ permissions:
 jobs:
   release-build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Show repository files (debug)
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Listing top level:"
+          ls -la
+          echo "Listing repo root recursively (maxdepth 3):"
+          find . -maxdepth 3 -type f -print
+          echo "pyproject.toml content (if present):"
+          if [ -f pyproject.toml ]; then
+            sed -n '1,200p' pyproject.toml
+          else
+            echo "pyproject.toml not found in $(pwd)"
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
       - name: Build release distributions
+        working-directory: .
         run: |
-          # NOTE: put your own distribution build steps here.
-          python -m pip install build
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade setuptools wheel build
           python -m build
 
       - name: Upload distributions
@@ -40,22 +49,12 @@ jobs:
 
   pypi-publish:
     runs-on: ubuntu-latest
-    needs:
-      - release-build
+    needs: release-build
     permissions:
-      # IMPORTANT: this permission is mandatory for trusted publishing
       id-token: write
-
-    # Dedicated environments with protections for publishing are strongly recommended.
-    # For more information, see: https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#deployment-protection-rules
+      contents: read
     environment:
       name: pypi
-      # OPTIONAL: uncomment and update to include your PyPI project URL in the deployment status:
-      # url: https://pypi.org/p/YOURPROJECT
-      #
-      # ALTERNATIVE: if your GitHub Release name is the PyPI project version string
-      # ALTERNATIVE: exactly, uncomment the following line instead:
-      # url: https://pypi.org/project/YOURPROJECT/${{ github.event.release.name }}
 
     steps:
       - name: Retrieve release distributions
@@ -68,3 +67,9 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
+          pypi_api_token: ${{ secrets.PYPI_API_TOKEN }}
+
+# Observações:
+# - Este workflow roda quando uma release é publicada e também manualmente (workflow_dispatch) para testes.
+# - Certifique-se de que pyproject.toml está na raiz do repositório (arquivo: ./pyproject.toml).
+# - Para publicar no PyPI, adicione o segredo PYPI_API_TOKEN em Settings > Secrets > Actions com o token de API do PyPI.
