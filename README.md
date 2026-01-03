@@ -35,9 +35,9 @@ Realiza o cálculo da nota final aplicando pesos e penalidades:
 ### `prompt_juiz` (Prompt)
 Define a persona de um "Juiz Crítico" para o Claude. Instrui o modelo a analisar o input/output, atribuir notas mentais e obrigatoriamente invocar a tool `calcular_veredito` para o resultado oficial.
 
-
-Se quiser conversar sobre esse projeto, basta acessar a versão [TalkToGitHub](https://talktogithub.com/marioluciofjr/mcp_judge)
-Want to better understand this repository, but you don't speak Portuguese? Check out this complete tutorial: [`Codebase - mcp_judge`](https://code2tutorial.com/tutorial/2a71af2f-9436-4910-8b83-3c2b18665463/index.md)
+> [!IMPORTANT]
+> Se quiser conversar sobre esse projeto, basta acessar a versão [`TalkToGitHub`](https://talktogithub.com/marioluciofjr/mcp_judge) <br>
+> Want to better understand this repository, but you don't speak Portuguese? Check out this complete tutorial: [`Codebase - mcp_judge`](https://code2tutorial.com/tutorial/2a71af2f-9436-4910-8b83-3c2b18665463/index.md)
 
 ## Tecnologias utilizadas
 
