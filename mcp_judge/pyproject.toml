@@ -1,5 +1,5 @@
 [project]
-name = "mcp-judge"
+name = "mcpserver_judge"
 version = "0.1.0"
 description = "Juiz Computacional para LLMs - MCP Server"
 readme = "README.md"
