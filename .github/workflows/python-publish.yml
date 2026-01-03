@@ -67,9 +67,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
-          pypi_api_token: ${{ secrets.PYPI_API_TOKEN }}
-
-# Observações:
-# - Este workflow roda quando uma release é publicada e também manualmente (workflow_dispatch) para testes.
-# - Certifique-se de que pyproject.toml está na raiz do repositório (arquivo: ./pyproject.toml).
-# - Para publicar no PyPI, adicione o segredo PYPI_API_TOKEN em Settings > Secrets > Actions com o token de API do PyPI.
+          # NÃO coloque pypi_api_token aqui
