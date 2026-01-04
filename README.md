@@ -111,7 +111,7 @@ Contribuições são bem-vindas! Se você tem ideias para melhorar este projeto,
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](https://github.com/marioluciofjr/mcp_news/blob/main/LICENSE) para detalhes.
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](https://github.com/marioluciofjr/mcp_judge/blob/main/LICENSE) para detalhes.
 
 ## Contato
     
