@@ -41,12 +41,14 @@ Define a persona de um "Juiz Crítico" para o Claude. Instrui o modelo a analisa
 
 ## Tecnologias utilizadas
 
-<div>
-  <img align="center" height="60" width="80" src="https://github.com/user-attachments/assets/c0604008-f730-413f-9c4e-9b06c0912692" />&nbsp;&nbsp;&nbsp
-  <img align="center" height="60" width="80" src="https://github.com/user-attachments/assets/76e7aca0-5321-4238-9742-164c20af5b4a" />&nbsp;&nbsp;&nbsp
-  <img align="center" height="60" width="80" src="https://github.com/user-attachments/assets/cf957637-962d-4548-87d4-bbde91fadc22" />&nbsp;&nbsp;&nbsp
-  <img align="center" height="60" width="80" src="https://i.namu.wiki/i/kARx1nP9GHaTktx_4yTI4HXLOjmd3JZaKJkHTXgE2bv4UATWXkVlvoE6ktFO4MFI6yMcV50x6z-pisOEDBOUOQ.webp" />&nbsp;&nbsp;&nbsp
- </div><br>
+ <table>
+  <tr>
+    <td><img height="60" width="80" src="https://github.com/user-attachments/assets/c0604008-f730-413f-9c4e-9b06c0912692" /></td>
+    <td><img height="60" width="80" src="https://github.com/user-attachments/assets/76e7aca0-5321-4238-9742-164c20af5b4a" /></td>
+    <td><img height="60" width="80" src="https://github.com/user-attachments/assets/cf957637-962d-4548-87d4-bbde91fadc22" /></td>
+    <td><img height="60" width="80" src="https://i.namu.wiki/i/kARx1nP9GHaTktx_4yTI4HXLOjmd3JZaKJkHTXgE2bv4UATWXkVlvoE6ktFO4MFI6yMcV50x6z-pisOEDBOUOQ.webp" /></td>
+  </tr>
+</table>
 
 * MCP (Model Context Protocol);
 * Python;
